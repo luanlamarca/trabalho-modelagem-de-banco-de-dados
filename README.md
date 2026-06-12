@@ -71,102 +71,73 @@ Abaixo, apresento as tabelas criadas e a justificativa social e administrativa d
 **Tabela familia_de_origem**
 Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar.
 
-**Tabela colaborador**
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/995f3689-840b-47d1-adbb-a497574a444e" />
+<br>
+<br>
+<br>
+
+
+**Tabela colaborador e telefone_colaborador**
 Registra a equipe de referência. Como assistente social, sei que a responsabilidade técnica precisa ser rastreável. Esta tabela vincula cada profissional (Assistente Social, Psicólogo, Coordenador) ao seu respectivo registro de conselho, garantindo transparência e ética na gestão do serviço.
+
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/6875c98a-3613-42d2-bcf2-444a417e7c9c" />
+
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/89ee9fa2-fe7a-405b-aafa-041ca7ee2b54" />
+<br>
+<br>
+
 
 **Tabela documentos**
 A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar a vida civil do acolhido.
 
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/c882fbfc-e9e2-4e09-a8dc-840481e3435e" />
+<br>
+<br>
+<br>
+
+
 **Tabela acolhido**
 É o coração do sistema. Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
 
-**Tabelas de Apoio (responsavel_familia, telefone_familia, telefone_colaborador)**
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/efebbfd9-1833-4f68-8a33-b39bfa7fc77d" />
+<br>
+<br>
+<br>
+
+
+**Tabelas de Apoio (responsavel_familia, telefone_familia)**
 A rede de proteção depende de comunicação rápida. Separei os contatos e os responsáveis em tabelas próprias porque um acolhido pode ter diversos vínculos (avós, tios, pais). Isso nos dá agilidade para acionar a rede em situações de emergência sem perder informações importantes.
+
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/0559c617-2ada-48a3-847b-5f078179f38d" />
+
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/fe2be460-2ce3-45c6-8d46-61e5fac7a37d" />
+<br>
+<br>
+
 
 **Tabela acolhido_documento**
 Resolve a necessidade prática de associar diversos documentos a uma mesma criança, facilitando o levantamento da documentação necessária para processos judiciais.
 
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/38d8486f-813d-4fd6-bedd-1b34a1c1340a" />
+<br>
+<br>
+<br>
+
+
 **Tabela pia**
 O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
+
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/f5da6279-67e4-4f0d-987c-96bc50bba62e" />
+<br>
+<br>
+
 
 **Tabela atendimento**
 Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. É aqui que registramos a evolução do caso. Ela permite que qualquer profissional da equipe técnica, ao assumir um plantão ou uma nova demanda, consiga ler o histórico completo e evitar a revitimização do acolhido através de repetições desnecessárias de relatos.
 
-```sql
-CREATE TABLE colaborador (
-  matricula VARCHAR(50) PRIMARY KEY,
-  primeiro_nome VARCHAR(50),
-  sobrenome VARCHAR(100),
-  cargo VARCHAR(50),
-  registro_conselho VARCHAR(20),
-  email_institucional VARCHAR(100),
-  vinculo_empregaticio VARCHAR(50),
-  data_admissao DATE,
-  data_desligamento DATE
-);
+<img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/9a035ba8-06b0-4d1a-a7e7-ca8b9e32b316" />
+<br>
+<br>
+<br>
 
-CREATE TABLE documentos (
-  id SERIAL PRIMARY KEY,
-  tipo VARCHAR(50),
-  numero_documento VARCHAR(50),
-  data_emissao DATE,
-  situacao VARCHAR(30)
-);
 
-CREATE TABLE responsavel_familia (
-  id_responsavel SERIAL PRIMARY KEY,
-  id_familia INT REFERENCES familia_de_origem(id),
-  nome_responsavel VARCHAR(100)
-);
-
-CREATE TABLE telefone_familia (
-  id_telefone SERIAL PRIMARY KEY,
-  id_familia INT REFERENCES familia_de_origem(id),
-  numero_telefone VARCHAR(15)
-);
-
-CREATE TABLE telefone_colaborador (
-  id_telefone SERIAL PRIMARY KEY,
-  matricula_colaborador VARCHAR(50) REFERENCES colaborador(matricula),
-  numero_telefone VARCHAR(15)
-);
-
-CREATE TABLE acolhido (
-    numero_prontuario VARCHAR(20) PRIMARY KEY,
-    id_familia INT REFERENCES familia_de_origem(id) NULL,
-    primeiro_nome VARCHAR(50),
-    sobrenome VARCHAR(100),
-    data_nascimento DATE,
-    sexo VARCHAR(20),
-    raca_cor VARCHAR(30),
-    situacao_atual VARCHAR(50),
-    data_acolhimento DATE,
-    motivo_acolhimento VARCHAR(500),
-    data_desligamento DATE,
-    tipo_desligamento VARCHAR(50)
-);
-
-CREATE TABLE acolhido_documento (
-    numero_prontuario_acolhido VARCHAR(20) REFERENCES acolhido(numero_prontuario),
-    id_documento INT REFERENCES documentos(id),
-    PRIMARY KEY (numero_prontuario_acolhido, id_documento)
-);
-
-CREATE TABLE pia (
-    id SERIAL PRIMARY KEY,
-    numero_prontuario_acolhido VARCHAR(20) UNIQUE REFERENCES acolhido(numero_prontuario),
-    data_elaboracao DATE,
-    data_ultima_revisao DATE,
-    situacao_atual VARCHAR(30)
-);
-
-CREATE TABLE atendimento (
-    id SERIAL PRIMARY KEY,
-    numero_prontuario_acolhido VARCHAR(20) REFERENCES acolhido(numero_prontuario),
-    matricula_colaborador VARCHAR(50) REFERENCES colaborador(matricula),
-    data_realizacao DATE,
-    horario_realizacao TIME,
-    tipo VARCHAR(50),
-    descricao TEXT,
-    encaminhamento TEXT
-);
