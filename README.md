@@ -47,3 +47,17 @@ A partir da análise do cenário, as regras de negócio foram traduzidas para a 
 
 ### Diagrama Entidade-Relacionamento (DER)
 <img width="8060" height="4084" alt="Modelagem de Banco de Dados (trabalho final)-Conceitual drawio" src="https://github.com/user-attachments/assets/852648a6-db34-4769-b9fa-d5678cf4862c" />
+
+
+## 3. Modelagem Lógica
+
+Na etapa de modelagem lógica, o Diagrama Entidade-Relacionamento (DER) foi mapeado para o modelo relacional. Nesta fase, definimos as chaves primárias (PK), chaves estrangeiras (FK) e aplicamos as regras de normalização para resolver os relacionamentos complexos e atributos multivalorados identificados no cenário.
+
+### Resolução de Estruturas e Relacionamentos
+* **Resolução de Atributos Multivalorados:** Para respeitar a Primeira Forma Normal (1FN), os atributos que podiam receber múltiplos valores foram transformados em tabelas independentes (ex: telefone_familia, telefone_colaborador e responsavel_familia), vinculadas pela respectiva chave estrangeira.
+* **Resolução do Relacionamento N:N (Muitos-para-Muitos):** O relacionamento entre ACOLHIDO e DOCUMENTOS foi resolvido através da tabela associativa acolhido_documento, que utiliza uma chave primária composta pelas chaves estrangeiras de ambas as tabelas.
+* **Garantia do Relacionamento 1:1:** Na tabela PIA, a chave estrangeira numero_prontuario_acolhido recebeu uma restrição de unicidade (UNIQUE), garantindo que cada PIA esteja atrelado a um único acolhido.
+* **Relacionamentos 1:N:** A integridade referencial foi garantida através da migração das chaves primárias dos lados "1" para os lados "N" das relações, conectando corretamente FAMILIA_DE_ORIGEM -> ACOLHIDO, COLABORADOR -> ATENDIMENTO e ACOLHIDO -> ATENDIMENTO.
+
+### Esquema Relacional
+<img width="5236" height="4364" alt="Modelagem de Banco de Dados (trabalho final)-Lógica drawio" src="https://github.com/user-attachments/assets/53a2dedc-911a-494a-a747-201ce13fcf4b" />
