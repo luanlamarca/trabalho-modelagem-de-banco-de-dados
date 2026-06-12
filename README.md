@@ -317,3 +317,9 @@ Acompanha de forma centralizada as ações de campo em que a equipe técnica rea
 <img width="1920" height="996" alt="Captura de Tela 2026-06-12 às 14 59 27" src="https://github.com/user-attachments/assets/b96b5c43-1c3f-4012-9933-b882871595ee" />
 <br>
 <br>
+
+## Considerações Finais 
+
+Chegar ao fim deste projeto tem um significado muito especial para mim. Foi genuinamente prazeroso entender, na prática, como a construção de um banco de dados pode me auxiliar de forma tão direta no dia a dia do meu trabalho como assistente social. 
+
+Quando iniciei essa jornada na tecnologia, confesso que os códigos pareciam um mundo distante da minha realidade no abrigo. Porém, desenhar as tabelas, organizar os prontuários e cruzar as informações das famílias me fez enxergar o quanto um sistema bem estruturado pode nos libertar daquela burocracia exaustiva.
