@@ -68,7 +68,7 @@ A estruturação física deste banco de dados reflete a realidade do fluxo de tr
 
 Abaixo, apresento as tabelas criadas e a justificativa social e administrativa de cada uma:
 
-**Tabela familia_de_origem**
+### Tabela familia_de_origem
 
 Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar.
 
@@ -80,7 +80,7 @@ Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória.
 <br>
 
 
-**Tabela colaborador e telefone_colaborador**
+### Tabela colaborador e telefone_colaborador
 
 Registra a equipe de referência. Como assistente social, sei que a responsabilidade técnica precisa ser rastreável. Esta tabela vincula cada profissional (Assistente Social, Psicólogo, Coordenador) ao seu respectivo registro de conselho, garantindo transparência e ética na gestão do serviço.
 
@@ -95,7 +95,7 @@ Registra a equipe de referência. Como assistente social, sei que a responsabili
 <br>
 
 
-**Tabela documentos**
+### Tabela documentos
 
 A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar a vida civil do acolhido.
 
@@ -107,7 +107,7 @@ A falta de documentação civil é um problema constante na nossa rotina. Criei 
 <br>
 
 
-**Tabela acolhido**
+### Tabela acolhido
 
 É o coração do sistema. Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
 
@@ -119,7 +119,7 @@ A falta de documentação civil é um problema constante na nossa rotina. Criei 
 <br>
 
 
-**Tabelas de responsavel_familia e telefone_familia)**
+### Tabelas de responsavel_familia e telefone_familia)
 
 A rede de proteção depende de comunicação rápida. Separei os contatos e os responsáveis em tabelas próprias porque um acolhido pode ter diversos vínculos (avós, tios, pais). Isso nos dá agilidade para acionar a rede em situações de emergência sem perder informações importantes.
 
@@ -134,7 +134,7 @@ A rede de proteção depende de comunicação rápida. Separei os contatos e os 
 <br>
 
 
-**Tabela acolhido_documento**
+### Tabela acolhido_documento
 
 Resolve a necessidade prática de associar diversos documentos a uma mesma criança, facilitando o levantamento da documentação necessária para processos judiciais.
 
@@ -146,7 +146,7 @@ Resolve a necessidade prática de associar diversos documentos a uma mesma crian
 <br>
 
 
-**Tabela pia**
+### Tabela pia
 
 O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
 
@@ -158,7 +158,7 @@ O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma ta
 <br>
 
 
-**Tabela atendimento**
+### Tabela atendimento
 
 Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. É aqui que registramos a evolução do caso. Ela permite que qualquer profissional da equipe técnica, ao assumir um plantão ou uma nova demanda, consiga ler o histórico completo e evitar a revitimização do acolhido através de repetições desnecessárias de relatos.
 
@@ -166,5 +166,51 @@ Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. �
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/9a035ba8-06b0-4d1a-a7e7-ca8b9e32b316" />
+<br>
+<br>
+
+## CRUD
+
+As operações de manipulação de dados refletem o dinamismo do cotidiano institucional. No SAICA, o banco de dados é alimentado continuamente à medida que novas intervenções ocorrem, dados familiares mudam, cadastros profissionais são checados e correções de registros de evolução diária são necessárias.
+
+Abaixo estão apresentadas as execuções das quatro operações básicas do sistema, justificadas pela prática do serviço:
+
+### C - Create (Inserção de Registros)
+Registra formalmente uma nova intervenção técnica ou evolução de rotina diretamente vinculada ao prontuário do acolhido, documentando o acompanhamento técnico da equipe de referência.
+
+<img width="1920" height="647" alt="Captura de Tela 2026-06-12 às 14 31 58" src="https://github.com/user-attachments/assets/ba5aa6b7-f3a1-48e6-b04a-1ec978fe3bcb" />
+<br>
+<br>
+<img width="1920" height="100" alt="Captura de Tela 2026-06-12 às 14 32 52" src="https://github.com/user-attachments/assets/ac5c8a8c-4514-4a37-a095-5f78fd79e3d1" />
+<br>
+<br>
+
+
+### R - Read (Consulta de Registros)
+Permite a verificação imediata das informações cadastrais, cargos e números de registros em conselhos de classe (como CRESS ou CRP) dos técnicos responsáveis pelas evoluções e relatórios do serviço.
+
+<img width="1920" height="677" alt="Captura de Tela 2026-06-12 às 14 33 20" src="https://github.com/user-attachments/assets/16517965-94f2-4d97-8747-bf386e9a0cd9" />
+<br>
+<br>
+
+
+### U - Update (Atualização de Registros)
+Utilizado para manter o estudo socioeconômico atualizado. Quando a renda de uma família de origem sofre alteração durante o período de acompanhamento (seja por inserção no mercado de trabalho ou concessão de benefícios sociais), o dado é imediatamente retificado.
+
+<img width="1920" height="640" alt="Captura de Tela 2026-06-12 às 14 33 52" src="https://github.com/user-attachments/assets/f9bfbeea-7501-455b-8da7-4996595608bb" />
+<br>
+<br>
+<img width="1920" height="175" alt="Captura de Tela 2026-06-12 às 14 34 23" src="https://github.com/user-attachments/assets/02024840-8ac9-4271-8929-75f259c77248" />
+<br>
+<br>
+
+
+### D - Delete (Exclusão de Registros)
+A exclusão de dados no serviço de acolhimento é restrita a erros materiais e operacionais. Neste caso, o comando remove um registro de atendimento ou evolução que tenha sido inserido com duplicidade ou equívoco de digitação durante o plantão.
+
+<img width="1920" height="636" alt="Captura de Tela 2026-06-12 às 14 34 59" src="https://github.com/user-attachments/assets/b081483e-0f2d-4c1c-ad8d-bb46665496a4" />
+<br>
+<br>
+<img width="1920" height="108" alt="Captura de Tela 2026-06-12 às 14 35 35" src="https://github.com/user-attachments/assets/03fb6766-2c58-40c9-bdb7-5b99c43b8e6e" />
 <br>
 <br>
