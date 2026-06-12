@@ -16,7 +16,7 @@ Devido ao caráter absolutamente sigiloso e sensível das informações tratadas
 
 A única exceção presente no banco de dados são os meus próprios dados profissionais (registrados na tabela de colaboradores sob a matrícula MAT-001 como Assistente Social), inseridos para formalizar a autoria técnica.
 
-## 1. Cenário
+## Cenário
 
 O Acolhimento Institucional Infantojuvenil é um serviço de proteção social especial de alta complexidade, mantido pela Prefeitura Municipal de Franca, que tem por finalidade oferecer acolhimento provisório a crianças e adolescentes de 0 a 17 anos e 11 meses que se encontram em situação de risco pessoal ou social, cujos vínculos familiares estejam temporariamente rompidos ou fragilizados. O serviço opera em conformidade com o Estatuto da Criança e do Adolescente (ECA), com o Sistema Único de Assistência Social (SUAS) e com as orientações técnicas do Ministério do Desenvolvimento Social para serviços de acolhimento institucional.
 
@@ -27,7 +27,7 @@ O serviço é composto por dois grupos de colaboradores. A equipe técnica de re
 Cada acolhido possui um histórico de atendimentos registrado pela equipe técnica, bem como vínculo com sua família de origem, que é acompanhada durante todo o período de acolhimento com o objetivo de viabilizar a reintegração familiar sempre que possível. Para cada acolhido é elaborado um Plano Individual de Atendimento (PIA), instrumento obrigatório previsto nas orientações técnicas do SUAS, que orienta as ações da equipe e é revisado periodicamente.
 
 
-## 2. Modelagem Conceitual
+## Modelagem Conceitual
 
 A partir da análise do cenário, as regras de negócio foram traduzidas para a modelagem conceitual, identificando as seguintes entidades, seus atributos e classificações:
 
@@ -49,7 +49,7 @@ A partir da análise do cenário, as regras de negócio foram traduzidas para a 
 <img width="8060" height="4084" alt="Modelagem de Banco de Dados (trabalho final)-Conceitual drawio" src="https://github.com/user-attachments/assets/852648a6-db34-4769-b9fa-d5678cf4862c" />
 
 
-## 3. Modelagem Lógica
+## Modelagem Lógica
 
 Na etapa de modelagem lógica, o Diagrama Entidade-Relacionamento (DER) foi mapeado para o modelo relacional. Nesta fase, definimos as chaves primárias (PK), chaves estrangeiras (FK) e aplicamos as regras de normalização para resolver os relacionamentos complexos e atributos multivalorados identificados no cenário.
 
@@ -61,3 +61,112 @@ Na etapa de modelagem lógica, o Diagrama Entidade-Relacionamento (DER) foi mape
 
 ### Esquema Relacional
 <img width="5236" height="4364" alt="Modelagem de Banco de Dados (trabalho final)-Lógica drawio" src="https://github.com/user-attachments/assets/53a2dedc-911a-494a-a747-201ce13fcf4b" />
+
+## Modelagem Física
+
+A estruturação física deste banco de dados reflete a realidade do fluxo de trabalho no SAICA. O objetivo não é apenas armazenar dados, mas garantir que a informação esteja organizada para subsidiar a tomada de decisão técnica e o atendimento aos direitos da criança e do adolescente.
+
+Abaixo, apresento as tabelas criadas e a justificativa social e administrativa de cada uma:
+
+**Tabela familia_de_origem**
+Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar.
+
+**Tabela colaborador**
+Registra a equipe de referência. Como assistente social, sei que a responsabilidade técnica precisa ser rastreável. Esta tabela vincula cada profissional (Assistente Social, Psicólogo, Coordenador) ao seu respectivo registro de conselho, garantindo transparência e ética na gestão do serviço.
+
+**Tabela documentos**
+A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar a vida civil do acolhido.
+
+**Tabela acolhido**
+É o coração do sistema. Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
+
+**Tabelas de Apoio (responsavel_familia, telefone_familia, telefone_colaborador)**
+A rede de proteção depende de comunicação rápida. Separei os contatos e os responsáveis em tabelas próprias porque um acolhido pode ter diversos vínculos (avós, tios, pais). Isso nos dá agilidade para acionar a rede em situações de emergência sem perder informações importantes.
+
+**Tabela acolhido_documento**
+Resolve a necessidade prática de associar diversos documentos a uma mesma criança, facilitando o levantamento da documentação necessária para processos judiciais.
+
+**Tabela pia**
+O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
+
+**Tabela atendimento**
+Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. É aqui que registramos a evolução do caso. Ela permite que qualquer profissional da equipe técnica, ao assumir um plantão ou uma nova demanda, consiga ler o histórico completo e evitar a revitimização do acolhido através de repetições desnecessárias de relatos.
+
+```sql
+CREATE TABLE colaborador (
+  matricula VARCHAR(50) PRIMARY KEY,
+  primeiro_nome VARCHAR(50),
+  sobrenome VARCHAR(100),
+  cargo VARCHAR(50),
+  registro_conselho VARCHAR(20),
+  email_institucional VARCHAR(100),
+  vinculo_empregaticio VARCHAR(50),
+  data_admissao DATE,
+  data_desligamento DATE
+);
+
+CREATE TABLE documentos (
+  id SERIAL PRIMARY KEY,
+  tipo VARCHAR(50),
+  numero_documento VARCHAR(50),
+  data_emissao DATE,
+  situacao VARCHAR(30)
+);
+
+CREATE TABLE responsavel_familia (
+  id_responsavel SERIAL PRIMARY KEY,
+  id_familia INT REFERENCES familia_de_origem(id),
+  nome_responsavel VARCHAR(100)
+);
+
+CREATE TABLE telefone_familia (
+  id_telefone SERIAL PRIMARY KEY,
+  id_familia INT REFERENCES familia_de_origem(id),
+  numero_telefone VARCHAR(15)
+);
+
+CREATE TABLE telefone_colaborador (
+  id_telefone SERIAL PRIMARY KEY,
+  matricula_colaborador VARCHAR(50) REFERENCES colaborador(matricula),
+  numero_telefone VARCHAR(15)
+);
+
+CREATE TABLE acolhido (
+    numero_prontuario VARCHAR(20) PRIMARY KEY,
+    id_familia INT REFERENCES familia_de_origem(id) NULL,
+    primeiro_nome VARCHAR(50),
+    sobrenome VARCHAR(100),
+    data_nascimento DATE,
+    sexo VARCHAR(20),
+    raca_cor VARCHAR(30),
+    situacao_atual VARCHAR(50),
+    data_acolhimento DATE,
+    motivo_acolhimento VARCHAR(500),
+    data_desligamento DATE,
+    tipo_desligamento VARCHAR(50)
+);
+
+CREATE TABLE acolhido_documento (
+    numero_prontuario_acolhido VARCHAR(20) REFERENCES acolhido(numero_prontuario),
+    id_documento INT REFERENCES documentos(id),
+    PRIMARY KEY (numero_prontuario_acolhido, id_documento)
+);
+
+CREATE TABLE pia (
+    id SERIAL PRIMARY KEY,
+    numero_prontuario_acolhido VARCHAR(20) UNIQUE REFERENCES acolhido(numero_prontuario),
+    data_elaboracao DATE,
+    data_ultima_revisao DATE,
+    situacao_atual VARCHAR(30)
+);
+
+CREATE TABLE atendimento (
+    id SERIAL PRIMARY KEY,
+    numero_prontuario_acolhido VARCHAR(20) REFERENCES acolhido(numero_prontuario),
+    matricula_colaborador VARCHAR(50) REFERENCES colaborador(matricula),
+    data_realizacao DATE,
+    horario_realizacao TIME,
+    tipo VARCHAR(50),
+    descricao TEXT,
+    encaminhamento TEXT
+);
