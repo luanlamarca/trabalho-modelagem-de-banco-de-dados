@@ -2,11 +2,11 @@
 
 ### Apresentação e Objetivos
 
-Olá! Meu nome é **Luan de Souza Leonel Lamarca**. Sou Assistente Social e atualmente atuo na rede de proteção especial, especificamente em um **Serviço de Acolhimento Institucional para Crianças e Adolescentes (SAICA)**.
+Olá! Meu nome é **Luan de Souza Leonel Lamarca**. Sou Assistente Social e atuo na rede de proteção especial, especificamente em um **Serviço de Acolhimento Institucional para Crianças e Adolescentes (SAICA)**.
 
-Para contextualizar, o SAICA é um serviço de alta complexidade do Sistema Único de Assistência Social (SUAS). Ele funciona como uma medida protetiva excepcional e provisória, oferecendo moradia, cuidado e proteção integral para crianças e adolescentes que precisaram ser afastados de suas famílias de origem devido a situações de risco, negligência, violência ou abandono. Nosso trabalho diário envolve garantir o bem-estar desses acolhidos enquanto atuamos judicial e socialmente para viabilizar o retorno seguro à família ou o encaminhamento para adoção.
+Para contextualizar, o SAICA é um serviço de alta complexidade do Sistema Único de Assistência Social (SUAS). Ele funciona como uma medida protetiva excepcional e provisória, oferecendo moradia, cuidado e proteção integral para crianças e adolescentes que precisaram ser afastados de suas famílias de origem devido a situações de risco, negligência, violência ou abandono. Nosso trabalho diário envolve garantir o bem estar desses acolhidos enquanto atuamos judicial e socialmente para viabilizar o retorno seguro à família ou o encaminhamento para adoção.
 
-A motivação para o desenvolvimento desta modelagem de banco de dados nasceu diretamente das dores e necessidades que encontro na minha rotina profissional. No dia a dia de um abrigo, a equipe técnica e de cuidados lida com um volume massivo de informações críticas: controle de documentos frequentemente perdidos, prazos rígidos do judiciário, histórico de atendimentos, vínculos familiares e a gestão do Plano Individual de Atendimento (PIA).
+A motivação para o desenvolvimento desta modelagem de banco de dados nasceu diretamente das dores e necessidades que encontro na minha rotina profissional. No dia a dia de um abrigo, a equipe técnica e de cuidados lida com um volume massivo de informações críticas: controle de documentos, prazos rígidos do judiciário, histórico de atendimentos, vínculos familiares e a gestão do Plano Individual de Atendimento (PIA).
 
 O objetivo deste trabalho é aplicar os conhecimentos técnicos adquiridos neste primeiro semestre para propor uma solução tecnológica real. A estrutura deste banco de dados foi desenhada para organizar essa complexidade, permitindo buscas rápidas, cruzamento de informações estratégicas e a geração de relatórios que otimizam o tempo da equipe técnica.
 
@@ -20,7 +20,7 @@ A única exceção presente no banco de dados são os meus próprios dados profi
 
 Abaixo está o índice de arquivos na pasta deste repositório, organizados para acompanhar a linha do tempo de desenvolvimento do projeto. 
 
-*Nota: Todos os arquivos de "Print" (em .pdf) são evidências visuais registradas durante o processo de criação, execução e validação dos dados em cada uma das etapas, contendo data e horário da realização.*
+*Nota: Todos os arquivos de "Print" (em .pdf) são evidências visuais registradas durante o processo de criação, execução e validação dos dados em cada uma das etapas, contendo data e horário da realização. Algumas das atualizações ao longo do projeto não foram registradas nesta etapa, mas se encontram nos historicos de commits*
 
 * **1. Cenário.rtf / 1.1 Print Cenário.pdf** - 
   Documento de texto contendo a descrição das regras de negócio e a realidade do SAICA que fundamentam o projeto.
@@ -35,13 +35,13 @@ Abaixo está o índice de arquivos na pasta deste repositório, organizados para
   Script com os comandos CREATE TABLE utilizados para construir a estrutura oficial do banco de dados no SGBD.
 
 * **5. Inserção de Dados.sql / 5.1 Print Inserção de Dados.pdf** - 
-  Script com os comandos INSERT responsáveis por popular o banco de dados com o volume de registros fictícios necessários para as simulações.
+  Script com os comandos INSERT responsáveis por inserir no banco de dados o o volume de registros fictícios necessários para as simulações.
 
 * **6. Crude.sql / 6.1 Print Crude.pdf** - 
   Script demonstrando as operações fundamentais de rotina do sistema: criação, leitura, atualização e exclusão (CRUD).
 
 * **7. Relatórios.sql / 7.1 Prints Relatórios.pdf** - 
-  Script contendo as 10 consultas gerenciais complexas (usando JOINs, agrupamentos e filtros), elaboradas para extrair estatísticas e auxiliar na tomada de decisão técnica.
+  Script contendo 10 consultas gerenciais (usando JOINs, agrupamentos e filtros), elaboradas para extrair estatísticas e auxiliar na tomada de decisão técnica.
 
 ## Cenário
 
@@ -49,7 +49,7 @@ O Acolhimento Institucional Infantojuvenil é um serviço de proteção social e
 
 O serviço possui capacidade para acolher até 50 crianças e adolescentes simultaneamente em regime de acolhimento ativo. Os registros do sistema contemplam o histórico acumulado do serviço ao longo dos anos, incluindo acolhidos já desligados, famílias encerradas e colaboradores que passaram pelo serviço, o que garante volume de dados suficiente para consultas e relatórios gerenciais.
 
-O serviço é composto por dois grupos de colaboradores. A equipe técnica de referência é formada por uma coordenadora, responsável pela gestão administrativa e técnica do serviço; um assistente social, responsável pelos estudos sociais, relatórios ao judiciário e articulação com a rede de proteção; uma psicóloga, responsável pelo acompanhamento psicoterápico e elaboração de pareceres psicológicos; e uma pedagoga, responsável pelo acompanhamento escolar e realização de atividades socioeducativas. A equipe de cuidado direto é composta por educadores sociais e cuidadores, que atuam em turnos diurnos e noturnos garantindo a proteção, o cuidado e a convivência dos acolhidos no cotidiano institucional, além de auxiliares de serviços gerais e estagiários de cursos como Serviço Social e Psicologia. O sistema registra todos os colaboradores, ativos e desligados, preservando o histórico institucional.
+O serviço é composto por dois grupos de colaboradores. A equipe técnica de referência é formada por coordenador(a), responsável pela gestão administrativa e técnica do serviço; assistente social, responsável pelos estudos sociais, relatórios ao judiciário e articulação com a rede de proteção; psicólogo(a), responsável pelo acompanhamento psicoterápico e elaboração de pareceres psicológicos; e edagogo(a), responsável pelo acompanhamento escolar e realização de atividades socioeducativas. A equipe de cuidado direto é composta por educadores sociais e cuidadoras(es), que atuam em turnos diurnos e noturnos garantindo a proteção, o cuidado e a convivência dos acolhidos no cotidiano institucional, além de auxiliares de serviços gerais e estagiários(as) de cursos como Serviço Social e Psicologia. O sistema registra todos os colaboradores, ativos e desligados, preservando o histórico institucional.
 
 Cada acolhido possui um histórico de atendimentos registrado pela equipe técnica, bem como vínculo com sua família de origem, que é acompanhada durante todo o período de acolhimento com o objetivo de viabilizar a reintegração familiar sempre que possível. Para cada acolhido é elaborado um Plano Individual de Atendimento (PIA), instrumento obrigatório previsto nas orientações técnicas do SUAS, que orienta as ações da equipe e é revisado periodicamente.
 
@@ -66,7 +66,7 @@ A partir da análise do cenário, as regras de negócio foram traduzidas para a 
 * **Plano Individual de Atendimento (PIA):** Instrumento de gestão do caso. Recebe um identificador único (atributo chave), data de elaboração, data da última revisão e situação atual do plano.
 
 **Relacionamentos Identificados:**
-* **Acolhido e Família (1:N):** Cada acolhido pertence a uma única família de origem, e uma família pode ter vários acolhidos vinculados no serviço.
+* **Acolhido e Família (0,1:1,N):** Cada acolhido pertence a uma única família de origem, ou a nenhuma quando não há informações, e uma família pode ter um vários acolhidos vinculados no serviço.
 * **Atendimento e Colaborador (1:N):** Cada atendimento é conduzido por um único colaborador, e um colaborador conduz muitos atendimentos.
 * **Atendimento e Acolhido (1:N):** Um atendimento está obrigatoriamente vinculado a um acolhido, e um acolhido possui muitos atendimentos registrados no prontuário.
 * **Acolhido e Documentos (N:N):** Cada acolhido possui vários documentos, e um mesmo tipo de documento pode estar associado a vários acolhidos no sistema.
@@ -97,7 +97,7 @@ Abaixo, apresento as tabelas criadas e a justificativa social e administrativa d
 
 ### Tabela familia_de_origem
 
-Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar.
+Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar. Entretanto, nem sempre esses dados vem acompanhados com os acolhidos, sendo necessária uma investigação posteriormente pela Equipe Técnica do serviço. 
 
 <img width="1920" height="323" alt="image" src="https://github.com/user-attachments/assets/142ad048-7988-4a03-9315-31792a58f778" />
 <br>
@@ -109,8 +109,7 @@ Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória.
 
 ### Tabela colaborador e telefone_colaborador
 
-Registra a equipe de referência. Como assistente social, sei que a responsabilidade técnica precisa ser rastreável. Esta tabela vincula cada profissional (Assistente Social, Psicólogo, Coordenador) ao seu respectivo registro de conselho, garantindo transparência e ética na gestão do serviço.
-
+Registra a equipe de referência. Esta tabela vincula cada profissional ao seus respectivo dados pessoais. 
 <img width="1920" height="483" alt="image" src="https://github.com/user-attachments/assets/8bd251b3-c611-4871-be9a-ae415c556a7e" />
 <br>
 <br>
@@ -124,7 +123,7 @@ Registra a equipe de referência. Como assistente social, sei que a responsabili
 
 ### Tabela documentos
 
-A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar a vida civil do acolhido.
+A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar do acolhido.
 
 <img width="1920" height="266" alt="image" src="https://github.com/user-attachments/assets/054b1119-5c6a-4dcc-86dc-a077df02275f" />
 <br>
@@ -136,7 +135,7 @@ A falta de documentação civil é um problema constante na nossa rotina. Criei 
 
 ### Tabela acolhido
 
-É o coração do sistema. Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
+Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
 
 <img width="1920" height="403" alt="image" src="https://github.com/user-attachments/assets/c00e3bf5-53e7-4221-80a8-5b020990b2d8" />
 <br>
@@ -175,7 +174,7 @@ Resolve a necessidade prática de associar diversos documentos a uma mesma crian
 
 ### Tabela pia
 
-O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
+O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, ou mesmo aqueles que estão pendentes, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
 
 <img width="1920" height="261" alt="image" src="https://github.com/user-attachments/assets/16dd5bda-3a89-43a9-ba70-c5d4e637c9fb" />
 <br>
@@ -198,7 +197,7 @@ Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. �
 
 ## CRUD
 
-As operações de manipulação de dados refletem o dinamismo do cotidiano institucional. No SAICA, o banco de dados é alimentado continuamente à medida que novas intervenções ocorrem, dados familiares mudam, cadastros profissionais são checados e correções de registros de evolução diária são necessárias.
+As operações de manipulação de dados refletem o dinamismo do cotidiano institucional. No SAICA, o banco de dados poderá ser alimentado continuamente à medida que novas intervenções ocorrem, dados familiares mudam, cadastros profissionais são checados e correções de registros de evolução diária são necessárias.
 
 Abaixo estão apresentadas as execuções das quatro operações básicas do sistema, justificadas pela prática do serviço:
 
@@ -244,12 +243,12 @@ A exclusão de dados no serviço de acolhimento é restrita a erros materiais e 
 
 ## Relatórios
 
-A extração de relatórios estatísticos e gerenciais traduz as linhas do banco de dados em ferramentas de garantia de direitos e diagnósticos sociais. Para a equipe técnica e coordenação do SAICA, o cruzamento dessas informações atende às constantes requisições do Poder Judiciário, Ministério Público e auditorias do SUAS, permitindo monitorar prazos legais e subsidiar políticas públicas baseadas em evidências do território.
+A extração de relatórios estatísticos e gerenciais traduz as linhas do banco de dados em ferramentas de garantia de direitos e diagnósticos sociais. Para a equipe técnica e coordenação do SAICA, o cruzamento dessas informações atende às constantes requisições do Poder Judiciário, Ministério Público e auditorias do SUAS, permitindo monitorar prazos legais e subsidiar ações da rede de proteção do municipio baseadas em evidências do território.
 
 Abaixo estão descritos e implementados os 10 relatórios estratégicos que norteiam a gestão do serviço:
 
 ### 1. Relatório de Acolhidos e Responsáveis
-Este relatório cruza os dados das crianças acolhidas com os nomes de seus respectivos responsáveis legais e os endereços de origem. É uma ferramenta essencial para o planejamento das ações de aproximação familiar e para subsidiar as informações básicas exigidas nas guias de acolhimento judicial.
+Este relatório cruza os dados das crianças acolhidas com os nomes de seus respectivos responsáveis legais e os endereços de origem. É uma ferramenta essencial para o planejamento das ações de aproximação familiar.
 
 <img width="1920" height="996" alt="Captura de Tela 2026-06-12 às 14 54 47" src="https://github.com/user-attachments/assets/a6660218-994f-415a-94dd-d94ae00b35ce" />
 <br>
@@ -291,14 +290,14 @@ Este relatório cruza a incidência de acolhimentos motivados especificamente po
 <br>
 
 ### 7. Acolhimento de Crianças Pretas ou Pardas
-Mapeia o perfil étnico-racial das crianças ativas no serviço de acolhimento institucional. O monitoramento deste recorte é fundamental para alimentar indicadores epidemiológicos locais e nacionais, servindo de base para o enfrentamento de vulnerabilidades específicas e subsidiar o planejamento de políticas afirmativas e protetivas.
+Mapeia o perfil étnico racial das crianças ativas no serviço de acolhimento institucional. O monitoramento deste recorte é fundamental para alimentar indicadores locais e nacionais, servindo de base para o enfrentamento de vulnerabilidades específicas e subsidiar o planejamento de políticas afirmativas e protetivas.
 
 <img width="1920" height="996" alt="Captura de Tela 2026-06-12 às 14 57 34" src="https://github.com/user-attachments/assets/cadaabc2-4752-41b3-8cb7-4230db7027a2" />
 <br>
 <br>
 
 ### 8. Tempo de Permanência dos Acolhidos Ativos em Dias
-O acolhimento deve ser uma medida estritamente provisória e breve. Esta consulta calcula em dias o tempo exato de permanência de cada acolhido ativo desde a sua data de entrada, gerando o indicador mais crítico do serviço para disparar alertas técnicos em casos que estejam se estendendo excessivamente.
+O acolhimento deve ser uma medida estritamente provisória e breve. Esta consulta calcula em dias o tempo exato de permanência de cada acolhido ativo desde a sua data de entrada, gerando o indicador de casos que estejam se estendendo excessivamente.
 
 <img width="1920" height="996" alt="Captura de Tela 2026-06-12 às 14 58 25" src="https://github.com/user-attachments/assets/f1a7b0e6-0222-4b17-8997-0470dd6ae472" />
 <br>
@@ -312,7 +311,7 @@ Mapeia o tempo de atuação dos profissionais com vínculo estável dentro da in
 <br>
 
 ### 10. Acolhidos Ativos que realizam Visitas Domiciliares
-Acompanha de forma centralizada as ações de campo em que a equipe técnica realizou visitas externas diretamente articuladas ao plano de metas dos casos ativos. Garante o controle gerencial das vistorias nas habitações e o monitoramento da evolução das condições familiares.
+Acompanha de forma centralizada as ações de campo em que os acolhidos realizaram visitas externas as suas familias. Garantindo o monitoramento da evolução dos vinculos familiares. 
 
 <img width="1920" height="996" alt="Captura de Tela 2026-06-12 às 14 59 27" src="https://github.com/user-attachments/assets/b96b5c43-1c3f-4012-9933-b882871595ee" />
 <br>
@@ -320,6 +319,6 @@ Acompanha de forma centralizada as ações de campo em que a equipe técnica rea
 
 ## Considerações Finais 
 
-Chegar ao fim deste projeto tem um significado muito especial para mim. Foi genuinamente prazeroso entender, na prática, como a construção de um banco de dados pode me auxiliar de forma tão direta no dia a dia do meu trabalho como assistente social. 
+Chegar ao fim deste projeto tem um significado muito especial para mim. Foi genuinamente prazeroso entender, na prática, como a construção de um banco de dados pode me auxiliar e também a demais profissionais de forma tão direta no dia a dia do meu trabalho na Proteção Social Especial. 
 
-Quando iniciei essa jornada na tecnologia, confesso que os códigos pareciam um mundo distante da minha realidade no abrigo. Porém, desenhar as tabelas, organizar os prontuários e cruzar as informações das famílias me fez enxergar o quanto um sistema bem estruturado pode nos libertar daquela burocracia exaustiva.
+Quando iniciei essa jornada na tecnologia, confesso que os códigos pareciam um mundo distante da minha realidade. Porém, desenhar as tabelas, organizar e cruzar as informações, mesmo que fictícias me fez enxergar o quanto um sistema bem estruturado pode nos libertar daquela burocracia exaustiva.
