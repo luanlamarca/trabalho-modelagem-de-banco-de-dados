@@ -1,4 +1,4 @@
--- TABELA: familia_de_origem
+-- TABELA: familia_de_origem.
 INSERT INTO familia_de_origem (endereco_logradouro, endereco_numero, endereco_bairro, endereco_cidade, endereco_cep, renda_familiar_mensal, acompanhamento) VALUES
 ('Av. Alonso Y Alonso', '450', 'Jardim Veneza', 'Franca', '14400-190', 1412.00, 'Ativo'),
 ('Rua Voluntários da Franca', '1020', 'Centro', 'Franca', '14400-490', 2100.50, 'Em monitoramento'),
