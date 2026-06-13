@@ -6,16 +6,17 @@ CREATE TABLE familia_de_origem (
   endereco_cidade VARCHAR(50),
   endereco_cep VARCHAR(9),
   renda_familiar_mensal DECIMAL(10,2),
-  acompanhamento VARCHAR(30)
+  acompanhamento VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE colaborador (
   matricula VARCHAR(50) PRIMARY KEY,
   primeiro_nome VARCHAR(50) NOT NULL,
   sobrenome VARCHAR(100) NOT NULL,
+  cpf VARCHAR(11) NOT NULL UNIQUE,
   cargo VARCHAR(50) NOT NULL,
   registro_conselho VARCHAR(20),
-  email_institucional VARCHAR(100) NOT NULL,
+  email_institucional VARCHAR(100) NOT NULL UNIQUE,
   vinculo_empregaticio VARCHAR(50),
   data_admissao DATE NOT NULL,
   data_desligamento DATE
@@ -23,10 +24,10 @@ CREATE TABLE colaborador (
 
 CREATE TABLE documentos (
   id SERIAL PRIMARY KEY,
-  tipo VARCHAR(50),
-  numero_documento VARCHAR(50),
-  data_emissao DATE,
-  situacao VARCHAR(30)
+  tipo VARCHAR(50) NOT NULL,
+  numero_documento VARCHAR(50) NOT NULL UNIQUE,
+  data_emissao DATE NOT NULL,
+  situacao VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE responsavel_familia (
@@ -43,8 +44,8 @@ CREATE TABLE telefone_familia (
 
 CREATE TABLE telefone_colaborador (
   id_telefone SERIAL PRIMARY KEY,
-  matricula_colaborador VARCHAR(50) REFERENCES colaborador(matricula),
-  numero_telefone VARCHAR(15)
+  matricula_colaborador VARCHAR(50) NOT NULL REFERENCES colaborador(matricula),
+  numero_telefone VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE acolhido (
@@ -70,19 +71,19 @@ CREATE TABLE acolhido_documento (
 
 CREATE TABLE pia (
     id SERIAL PRIMARY KEY,
-    numero_prontuario_acolhido VARCHAR(20) UNIQUE REFERENCES acolhido(numero_prontuario),
-    data_elaboracao DATE,
+    numero_prontuario_acolhido VARCHAR(20) NOT NULL UNIQUE REFERENCES acolhido(numero_prontuario),
+    data_elaboracao DATE NOT NULL DEFAULT CURRENT_DATE,
     data_ultima_revisao DATE,
-    situacao_atual VARCHAR(30)
+    situacao_atual VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE atendimento (
     id SERIAL PRIMARY KEY,
     numero_prontuario_acolhido VARCHAR(20) NOT NULL REFERENCES acolhido(numero_prontuario),
     matricula_colaborador VARCHAR(50) NOT NULL REFERENCES colaborador(matricula),
-    data_realizacao DATE NOT NULL,
+    data_realizacao DATE NOT NULL DEFAULT CURRENT_DATE,
     horario_realizacao TIME,
     tipo VARCHAR(50) NOT NULL,
-    descricao TEXT,
+    descricao TEXT NOT NULL,
     encaminhamento TEXT
 );
