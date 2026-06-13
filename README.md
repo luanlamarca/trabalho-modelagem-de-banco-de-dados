@@ -99,7 +99,7 @@ Abaixo, apresento as tabelas criadas e a justificativa social e administrativa d
 
 Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória. Esta tabela armazena o histórico do endereço e a renda da família, elementos cruciais nos nossos estudos sociais para a avaliação da possibilidade de reintegração familiar.
 
-<img width="1920" height="298" alt="image" src="https://github.com/user-attachments/assets/351ae2b7-cec0-4f49-8e0b-89de71dc7628" />
+<img width="1920" height="323" alt="image" src="https://github.com/user-attachments/assets/142ad048-7988-4a03-9315-31792a58f778" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/995f3689-840b-47d1-adbb-a497574a444e" />
@@ -111,7 +111,7 @@ Fundamental para o nosso trabalho, pois o acolhimento é uma medida provisória.
 
 Registra a equipe de referência. Como assistente social, sei que a responsabilidade técnica precisa ser rastreável. Esta tabela vincula cada profissional (Assistente Social, Psicólogo, Coordenador) ao seu respectivo registro de conselho, garantindo transparência e ética na gestão do serviço.
 
-<img width="1920" height="437" alt="image" src="https://github.com/user-attachments/assets/06bee1ca-68b9-4d9d-8f42-6e64a48b34ab" />
+<img width="1920" height="483" alt="image" src="https://github.com/user-attachments/assets/8bd251b3-c611-4871-be9a-ae415c556a7e" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/6875c98a-3613-42d2-bcf2-444a417e7c9c" />
@@ -126,7 +126,7 @@ Registra a equipe de referência. Como assistente social, sei que a responsabili
 
 A falta de documentação civil é um problema constante na nossa rotina. Criei esta tabela para centralizar o controle de certidões, RG, CPF e Cartão SUS, permitindo que a equipe técnica identifique rapidamente o que está pendente para regularizar a vida civil do acolhido.
 
-<img width="1920" height="247" alt="image" src="https://github.com/user-attachments/assets/fb2f02b3-e032-49b8-acb5-1cea9d1cfb9d" />
+<img width="1920" height="266" alt="image" src="https://github.com/user-attachments/assets/054b1119-5c6a-4dcc-86dc-a077df02275f" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/c882fbfc-e9e2-4e09-a8dc-840481e3435e" />
@@ -138,7 +138,7 @@ A falta de documentação civil é um problema constante na nossa rotina. Criei 
 
 É o coração do sistema. Esta tabela consolida o histórico de entrada, o motivo do acolhimento e o desfecho (reintegração ou adoção). Ela nos permite extrair dados sobre o tempo de permanência, essencial para evitar que o acolhimento se torne uma medida definitiva por esquecimento ou falta de gestão dos prazos.
 
-<img width="1920" height="382" alt="image" src="https://github.com/user-attachments/assets/c6607999-a475-4f78-97bd-390a898bfee3" />
+<img width="1920" height="403" alt="image" src="https://github.com/user-attachments/assets/c00e3bf5-53e7-4221-80a8-5b020990b2d8" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/efebbfd9-1833-4f68-8a33-b39bfa7fc77d" />
@@ -150,7 +150,7 @@ A falta de documentação civil é um problema constante na nossa rotina. Criei 
 
 A rede de proteção depende de comunicação rápida. Separei os contatos e os responsáveis em tabelas próprias porque um acolhido pode ter diversos vínculos (avós, tios, pais). Isso nos dá agilidade para acionar a rede em situações de emergência sem perder informações importantes.
 
-<img width="1920" height="319" alt="image" src="https://github.com/user-attachments/assets/21a91552-d1b1-4c89-bfc1-a796a5523916" />
+<img width="1920" height="345" alt="image" src="https://github.com/user-attachments/assets/8d2d5134-7fa5-4b32-8ceb-cc36bc844045" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/0559c617-2ada-48a3-847b-5f078179f38d" />
@@ -165,7 +165,7 @@ A rede de proteção depende de comunicação rápida. Separei os contatos e os 
 
 Resolve a necessidade prática de associar diversos documentos a uma mesma criança, facilitando o levantamento da documentação necessária para processos judiciais.
 
-<img width="1920" height="203" alt="image" src="https://github.com/user-attachments/assets/9614eb33-fb7c-4570-8125-e7c37cf3ffd9" />
+<img width="1920" height="226" alt="image" src="https://github.com/user-attachments/assets/883698cb-3136-4079-8b33-7aabd2ad2733" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/38d8486f-813d-4fd6-bedd-1b34a1c1340a" />
@@ -177,7 +177,7 @@ Resolve a necessidade prática de associar diversos documentos a uma mesma crian
 
 O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma tabela específica para o PIA garante que tenhamos um registro histórico de todas as revisões feitas pela equipe, demonstrando que o acolhimento está sendo acompanhado de forma ativa.
 
-<img width="1920" height="242" alt="image" src="https://github.com/user-attachments/assets/83f6f15e-af85-4e97-b022-d2b244df1e09" />
+<img width="1920" height="261" alt="image" src="https://github.com/user-attachments/assets/16dd5bda-3a89-43a9-ba70-c5d4e637c9fb" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/f5da6279-67e4-4f0d-987c-96bc50bba62e" />
@@ -189,7 +189,7 @@ O Plano Individual de Atendimento é uma exigência técnica do SUAS. Ter uma ta
 
 Documenta todo o trabalho de escuta, visitas domiciliares e reuniões de rede. É aqui que registramos a evolução do caso. Ela permite que qualquer profissional da equipe técnica, ao assumir um plantão ou uma nova demanda, consiga ler o histórico completo e evitar a revitimização do acolhido através de repetições desnecessárias de relatos.
 
-<img width="1920" height="308" alt="image" src="https://github.com/user-attachments/assets/cb580816-2261-42d4-bd6e-0cb17ba6d7a2" />
+<img width="1920" height="328" alt="image" src="https://github.com/user-attachments/assets/2bca56c4-d090-4108-9b5b-a1958ad47cde" />
 <br>
 <br>
 <img width="1872" height="946" alt="image" src="https://github.com/user-attachments/assets/9a035ba8-06b0-4d1a-a7e7-ca8b9e32b316" />
